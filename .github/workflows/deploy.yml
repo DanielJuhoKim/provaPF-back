@@ -40,7 +40,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: danieljuhokim/provaPF-ci:${{ github.sha }}
+          tags: danieljuhokim/provapf-ci:${{ github.sha }}
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
@@ -56,4 +56,4 @@ jobs:
              -e MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} \
              -e MYSQL_HOST=mysql \
              --network=rede --name provaPF \
-             danieljuhokim/provaPF:${{ github.sha }}
+             danieljuhokim/provapf:${{ github.sha }}
